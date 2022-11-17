@@ -16,13 +16,16 @@
   "author": "Tejasvi",
   "license": "ISC",
   "dependencies": {
+    "@shopify/shopify-api": "^5.2.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.8",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "nonce": "^1.0.4"
   }
 }

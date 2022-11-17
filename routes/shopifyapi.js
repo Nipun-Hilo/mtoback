@@ -1,11 +1,12 @@
 const express = require('express');
 
-const  {login} = require("../controllers/auth");
+const  {readProducts, shopify} = require("../controllers/shopifyApi");
 
 const { protect } = require("../middleware/auth");
 
 const router = express.Router();
 // hilo-design
-router.post('/login',login);
+router.get('/products-count',readProducts);
+router.get('/shopify',shopify);
 
 module.exports = router;

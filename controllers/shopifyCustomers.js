@@ -7,8 +7,8 @@ const apiVersion = ApiVersion.October22
 
 exports.readCustomers = async (req, res) =>{
     
-
-    const result = await axios.get(`https://${process.env.API_KEY}:${process.env.SHOPIFY_TOKEN}@${process.env.SHOP}.myshopify.com/admin/api/${apiVersion}/customers.json`);
+    const add = req.query.ids ? `?ids=${req.query.ids}` : "";
+    const result = await axios.get(`https://${process.env.API_KEY}:${process.env.SHOPIFY_TOKEN}@${process.env.SHOP}.myshopify.com/admin/api/${apiVersion}/customers.json${add}`);
 
     if(!result){
         return res.status(404).json({
@@ -29,7 +29,7 @@ exports.readCustomers = async (req, res) =>{
 exports.readCustomerById = async (req, res) =>{
     
 
-    const result = await axios.get(`https://${process.env.API_KEY}:${process.env.SHOPIFY_TOKEN}@${process.env.SHOP}.myshopify.com/admin/api/${apiVersion}/customers.json/?ids=${req.params.customer_id}`);
+    const result = await axios.get(`https://${process.env.API_KEY}:${process.env.SHOPIFY_TOKEN}@${process.env.SHOP}.myshopify.com/admin/api/${apiVersion}/customers/${req.params.customer_id}.json`);
 
 
     if(!result){

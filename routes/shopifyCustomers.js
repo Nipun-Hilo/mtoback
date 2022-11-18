@@ -9,11 +9,11 @@ const { readCustomers,
 const { protect } = require("../middleware/auth");
 const router = express.Router();
 
-router.get("/", readCustomers);
-router.get("/count", readCustomerCount);
-router.get("/:customer_id/orders", readCustomerOrders);
-router.get("/:customer_id", readCustomerById);
-router.get("/search/:query", searchCustomerByQuery);
+router.get("/", protect, readCustomers);
+router.get("/count", protect, readCustomerCount);
+router.get("/:customer_id/orders", protect, readCustomerOrders);
+router.get("/:customer_id", protect, readCustomerById);
+router.get("/search/:query", protect, searchCustomerByQuery);
 
 
 // hilo-design

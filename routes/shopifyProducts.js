@@ -5,9 +5,9 @@ const { readProducts, readProductsById, readProductsCount }  = require("../contr
 const { protect } = require("../middleware/auth");
 const router = express.Router();
 
-router.get("/", readProducts);
-router.get("/count", readProductsCount);
-router.get("/:product_id", readProductsById);
+router.get("/", protect, readProducts);
+router.get("/count", protect, readProductsCount);
+router.get("/:product_id", protect, readProductsById);
 
 
 // hilo-design

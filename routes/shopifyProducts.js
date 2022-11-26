@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { readProducts, readProductsById, readProductsCount }  = require("../controllers/shopifyProducts")
+const { readProducts, readProductsById, readProductsCount } = require("../controllers/shopifyProducts")
 
 const { protect } = require("../middleware/auth");
 const router = express.Router();

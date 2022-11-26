@@ -10,6 +10,8 @@ const auth = require('./routes/auth');
 const shopifyProducts = require("./routes/shopifyProducts");
 const shopifyCustomers = require("./routes/shopifyCustomers");
 const shopifyOrders = require("./routes/shopifyOrders");
+const shopifyInventory = require("./routes/shopifyInventory");
+
 
 // Initialising App
 const app = express();
@@ -33,6 +35,7 @@ app.use('/api/v1/auth', auth );
 app.use('/api/v1/products', shopifyProducts);
 app.use('/api/v1/customers', shopifyCustomers);
 app.use('/api/v1/orders', shopifyOrders);
+app.use('/api/v1/inventory', shopifyInventory);
 
 
 // ==================================================
